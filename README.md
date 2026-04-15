@@ -8,7 +8,7 @@
 
 ## Mo ta
 
-(Mo ta ngan gon bai lab va nhung gi ban da lam)
+Bai lab nay huong dan xay dung mot ETL pipeline don gian de lam sach va xu ly du lieu san pham, sau do danh gia tac dong cua chat luong du lieu den ket qua cua mot AI agent. Ban se thuc hien tien trinh validate, loai bo du lieu loi va so sanh ket qua agent khi su dung du lieu sach va du lieu rac.
 
 ---
 
@@ -26,7 +26,10 @@ python solution.py
 
 ### Chay Agent Simulation (Stress Test)
 ```bash
-# Mo ta cach ban chay thi nghiem Clean vs Garbage data
+# Chay script agent_simulation.py de test voi 2 bo du lieu:
+python agent_simulation.py
+# Script se tu dong test voi processed_data.csv (du lieu sach) va garbage_data.csv (du lieu rac)
+# Ket qua se hien thi tren terminal, so sanh phan hoi cua agent voi tung bo du lieu.
 ```
 
 ---
@@ -44,4 +47,8 @@ python solution.py
 
 ## Ket qua
 
-(Tom tat ket qua: bao nhieu records da xu ly, bao nhieu bi loai, v.v.)
+- Validation summary: 3 kept, 2 dropped
+- Errors found: id=3 (Price <= 0), id=4 (Missing Category)
+- 3 records duoc luu vao processed_data.csv
+- Agent voi du lieu sach: "Based on my data, the best choice is Laptop at $1200."
+- Agent voi du lieu rac: "Based on my data, the best choice is Nuclear Reactor at $999999."
